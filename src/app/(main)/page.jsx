@@ -8,6 +8,11 @@ import water from "../../assets/water.png";
 import cream from "../../assets/cream.png";
 import sunglass from "../../assets/sunglass.png";
 import hat from "../../assets/hat.png";
+import tree from "../../assets/tree.png";
+import brand1 from "../../assets/brand1.png";
+import brand2 from "../../assets/brand2.png";
+import brand3 from "../../assets/brand3.png";
+import brand4 from "../../assets/brand4.png";
 import { IoMdSunny } from "react-icons/io";
 
 const Home = async () => {
@@ -56,9 +61,12 @@ const Home = async () => {
           </div>
         </div>
       </div>
-      <div className="bg-blue-50 mt-4">
+      <div className="bg-blue-50 mt-6">
         <div className="container mx-auto mt-6">
-          <h2 className="font-bold text-2xl flex items-center gap-2"><IoMdSunny className="text-orange-400" />Summer Care Tips</h2>
+          <h2 className="font-bold text-2xl flex items-center gap-2">
+            <IoMdSunny className="text-orange-400" />
+            Summer Care Tips
+          </h2>
           <div className="grid mt-4 mb-6 md:flex">
             <div className="space-y-2 flex gap-2">
               <div className="rounded-full bg-blue-300 p-8">
@@ -78,7 +86,7 @@ const Home = async () => {
               </div>
             </div>
             <div className="space-y-2 flex gap-2">
-              <div className="rounded-full bg-orange-200 p-8">
+              <div className="rounded-full bg-orange-200 p-10">
                 <Image
                   src={cream}
                   alt="cream-image"
@@ -126,6 +134,26 @@ const Home = async () => {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div className="container mx-auto mt-6">
+        <div className="flex items-center">
+          <Image src={tree} alt="tree-image" width={30} height={30}></Image>
+          <h2 className="font-bold text-2xl">Top Brands</h2>
+        </div>
+        <div className="mt-2 grid md:grid-cols-4 gap-2">
+          <div className="shadow-lg rounded-2xl pr-8 pl-8 lex items-center mx-auto">
+            <Image src={brand1} alt="brand-1" width={200} height={200}></Image>
+          </div>
+          <div className="shadow-lg rounded-2xl pr-8 pl-8 flex items-center mx-auto">
+            <Image src={brand2} alt="brand-2" width={200} height={200}></Image>
+          </div>
+          <div className="shadow-lg rounded-2xl pr-8 pl-8 lex items-center mx-auto">
+            <Image src={brand3} alt="brand-3" width={200} height={200}></Image>
+          </div>
+          <div className="shadow-lg rounded-2xl pr-8 pl-8 lex items-center mx-auto">
+            <Image src={brand4} alt="brand-4" width={200} height={200}></Image>
           </div>
         </div>
       </div>
