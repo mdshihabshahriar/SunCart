@@ -1,4 +1,5 @@
 import Hero from '@/app/(main)/hero/Hero';
+import Footer from '@/components/shared/Footer';
 import Navbar from '@/components/shared/Navbar';
 
 const MainLayout = ({children}) => {
@@ -6,6 +7,7 @@ const MainLayout = ({children}) => {
         <>
             <Navbar />
             {children}
+            <Footer></Footer>
         </>
     );
 };
