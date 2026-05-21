@@ -1,11 +1,10 @@
-import Hero from '@/components/shared/Hero';
+import Hero from '@/app/(main)/hero/Hero';
 import Navbar from '@/components/shared/Navbar';
 
 const MainLayout = ({children}) => {
     return (
         <>
             <Navbar />
-            <Hero />
             {children}
         </>
     );

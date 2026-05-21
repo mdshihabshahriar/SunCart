@@ -1,10 +1,10 @@
 "use client";
 import React, { useState } from "react";
-import image1 from "../../assets/hero1.png";
-import image2 from "../../assets/hero2.png";
-import image3 from "../../assets/hero3.png";
-import image4 from "../../assets/hero4.png";
-import image5 from "../../assets/hero5.png";
+import image1 from "../../../assets/hero1.png";
+import image2 from "../../../assets/hero2.png";
+import image3 from "../../../assets/hero3.png";
+import image4 from "../../../assets/hero4.png";
+import image5 from "../../../assets/hero5.png";
 import Image from "next/image";
 
 const slides = [
