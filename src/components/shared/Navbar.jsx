@@ -1,13 +1,16 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import logo from "../../assets/logo.png";
 import NavLink from "./NavLink";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
+  const pathName = usePathname();
   return (
-      <div className="bg-base-100 shadow-sm">
-        <div className="navbar container mx-auto">
+    <div className="bg-base-100 shadow-sm">
+      <div className="navbar container mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -58,10 +61,24 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end gap-2">
-          <Link href="/login" className="btn btn-outline border-orange-400 text-[16px] hover:bg-orange-400 hover:text-white">
+          <Link
+            href="/login"
+            className={
+              pathName === "/login"
+                ? "btn bg-orange-400 text-white text-[16px]"
+                : "btn btn-outline border-orange-400 text-[16px] hover:bg-orange-400 hover:text-white"
+            }
+          >
             Login
           </Link>
-          <Link href="/register" className="btn btn-outline border-orange-400 text-[16px] hover:bg-orange-400 hover:text-white">
+          <Link
+            href="/register"
+            className={
+              pathName === "/register"
+                ? "btn bg-orange-400 text-white text-[16px]"
+                : "btn btn-outline border-orange-400 text-[16px] hover:bg-orange-400 hover:text-white"
+            }
+          >
             Register
           </Link>
         </div>
