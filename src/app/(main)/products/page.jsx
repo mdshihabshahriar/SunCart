@@ -1,4 +1,4 @@
-import { getProducts } from "@/lib/data";
+import { getProductDetailsById, getProducts } from "@/lib/data";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -40,7 +40,7 @@ const Products = async () => {
                 <p className="font-bold text-xl text-orange-500">${p.price}</p>
                 <div className="card-actions justify-end">
                   <Link
-                    href={"/"}
+                    href={`/products/${p.id}`}
                     className="btn btn-outline border-orange-400 w-full text-orange-400 hover:bg-orange-400 hover:text-white font-bold"
                   >
                     View Details
