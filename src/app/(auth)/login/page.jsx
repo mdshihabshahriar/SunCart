@@ -23,23 +23,22 @@ const LoginPage = () => {
 
         <div className="relative z-10 w-full max-w-md rounded-3xl bg-white/90 backdrop-blur-md p-8 shadow-2xl">
           <div className="flex flex-col items-center mb-8">
-            <div className="text-5xl">☀️</div>
-            <h1 className="text-4xl font-extrabold mt-2">
+            <div className="text-5xl bg-blue-50 rounded-full p-3">☀️</div>
+            {/* <h1 className="text-4xl font-extrabold mt-2">
               <span className="text-orange-500">Sun</span>
               <span className="text-slate-900">Cart</span>
             </h1>
             <p className="text-slate-500 text-sm mt-1">
               Summer Essentials Store
-            </p>
+            </p> */}
           </div>
 
-          {/* Heading */}
           <div className="text-center mb-6">
             <h2 className="text-3xl font-bold text-slate-900">Welcome Back!</h2>
             <p className="text-slate-500 mt-2">Login to continue shopping</p>
           </div>
 
-          {/* DaisyUI Form */}
+
           <form className="space-y-2">
             {/* Email Field */}
             <fieldset className="fieldset">
