@@ -6,8 +6,39 @@ import { FcGoogle } from "react-icons/fc";
 import { FiMail, FiLock } from "react-icons/fi";
 import loginBg from "../../../assets/login-bg.png";
 import Navbar from "@/components/shared/Navbar";
+import { authClient } from "@/lib/auth-client";
+import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
+import { useForm } from "react-hook-form";
 
 const LoginPage = () => {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+
+  const router = useRouter();
+
+  const handleLoginFunc = async (data) => {
+
+    const { data: res, error } = await authClient.signIn.email({
+      email: data.email, // required
+      password: data.password, // required
+      rememberMe: true,
+      callbackURL: "/",
+    });
+    console.log(res, error);
+
+    if (error) {
+      toast.error(error.message);
+    }
+    if (res) {
+      toast.success("Login Successful!");
+      router.push("/");
+    }
+  };
   return (
     <>
       <Navbar></Navbar>
@@ -38,8 +69,7 @@ const LoginPage = () => {
             <p className="text-slate-500 mt-2">Login to continue shopping</p>
           </div>
 
-
-          <form className="space-y-2">
+          <form className="space-y-2" onSubmit={handleSubmit(handleLoginFunc)}>
             {/* Email Field */}
             <fieldset className="fieldset">
               <legend className="fieldset-legend text-slate-700 font-medium">
@@ -51,8 +81,12 @@ const LoginPage = () => {
                   type="email"
                   placeholder="Enter your email"
                   className="grow"
+                  {...register("email", {required : "Email field is required"})}
                 />
               </label>
+              {errors.email && (
+                <span className="text-red-500">{errors.email.message}</span>
+              )}
             </fieldset>
 
             {/* Password Field */}
@@ -66,8 +100,12 @@ const LoginPage = () => {
                   type="password"
                   placeholder="Enter your password"
                   className="grow"
+                  {...register("password", {required : "Password field is required"})}
                 />
               </label>
+              {errors.password && (
+                <span className="text-red-500">{errors.password.message}</span>
+              )}
             </fieldset>
 
             {/* <div className="flex items-center justify-between text-sm pt-1">
