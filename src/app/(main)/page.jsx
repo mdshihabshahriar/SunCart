@@ -28,13 +28,14 @@ const Home = async () => {
           <div className="mt-4 grid grid-cols-1 md:grid-cols-3">
             {products.slice(0, 3).map((p) => {
               return (
-                <div key={p.id} className="card bg-base-100 w-96 shadow-sm">
+                <div key={p.id} className="card bg-base-100 w-96 shadow-lg">
                   <figure>
                     <Image
                       src={p.image}
                       alt="card image"
                       width={384}
                       height={250}
+                      className="w-full h-72 object-cover"
                     ></Image>
                   </figure>
                   <div className="card-body">
