@@ -20,7 +20,7 @@ const Home = async () => {
   return (
     <>
       <Hero></Hero>
-      <div className="container mx-auto">
+      <div className="max-w-7xl mx-auto">
         <h2 className="flex items-center gap-2 font-bold text-2xl mt-4">
           <FaFire className="text-orange-400" /> Popular Products
         </h2>
@@ -28,7 +28,7 @@ const Home = async () => {
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-4">
             {products.slice(0, 3).map((p) => {
               return (
-                <div key={p.id} className="card bg-base-100 w-96 shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                <div key={p.id} className="card bg-base-100 shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl">
                   <figure>
                     <Image
                       src={p.image}
@@ -63,7 +63,7 @@ const Home = async () => {
         </div>
       </div>
       <div className="bg-blue-50 mt-8">
-        <div className="container mx-auto mt-6">
+        <div className="max-w-7xl mx-auto mt-6">
           <h2 className="font-bold text-2xl flex items-center gap-2">
             <IoMdSunny className="text-orange-400" />
             Summer Care Tips
@@ -138,7 +138,7 @@ const Home = async () => {
           </div>
         </div>
       </div>
-      <div className="container mx-auto mt-8">
+      <div className="w-11/12 mx-auto mt-8 px-4 md:px-6">
         <div className="flex items-center gap-1">
           <Image src={tree} alt="tree-image" width={30} height={30}></Image>
           <h2 className="font-bold text-2xl">Top Brands</h2>
