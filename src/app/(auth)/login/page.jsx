@@ -10,6 +10,8 @@ import { authClient } from "@/lib/auth-client";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
+import { useState } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const LoginPage = () => {
   const {
@@ -19,15 +21,16 @@ const LoginPage = () => {
     formState: { errors },
   } = useForm();
 
+  const [isShowPassword, setIsShowPassword] = useState(false);
+
   const router = useRouter();
 
   const handleLoginFunc = async (data) => {
-
     const { data: res, error } = await authClient.signIn.email({
       email: data.email, // required
       password: data.password, // required
       rememberMe: true,
-      callbackURL: "/",
+      //   callbackURL: "/",
     });
     console.log(res, error);
 
@@ -36,7 +39,9 @@ const LoginPage = () => {
     }
     if (res) {
       toast.success("Login Successful!");
-      router.push("/");
+      setTimeout(() => {
+        router.push("/");
+      }, 1000);
     }
   };
   return (
@@ -70,7 +75,6 @@ const LoginPage = () => {
           </div>
 
           <form className="space-y-2" onSubmit={handleSubmit(handleLoginFunc)}>
-            {/* Email Field */}
             <fieldset className="fieldset">
               <legend className="fieldset-legend text-slate-700 font-medium">
                 Email
@@ -81,7 +85,9 @@ const LoginPage = () => {
                   type="email"
                   placeholder="Enter your email"
                   className="grow"
-                  {...register("email", {required : "Email field is required"})}
+                  {...register("email", {
+                    required: "Email field is required",
+                  })}
                 />
               </label>
               {errors.email && (
@@ -89,7 +95,6 @@ const LoginPage = () => {
               )}
             </fieldset>
 
-            {/* Password Field */}
             <fieldset className="fieldset">
               <legend className="fieldset-legend text-slate-700 font-medium">
                 Password
@@ -97,11 +102,19 @@ const LoginPage = () => {
               <label className="input input-bordered flex items-center gap-3 rounded-xl bg-white w-full">
                 <FiLock className="text-slate-400 text-lg shrink-0" />
                 <input
-                  type="password"
+                  type={isShowPassword ? "text" : "password"}
                   placeholder="Enter your password"
                   className="grow"
-                  {...register("password", {required : "Password field is required"})}
+                  {...register("password", {
+                    required: "Password field is required",
+                  })}
                 />
+                <span
+                  className="cursor-pointer"
+                  onClick={() => setIsShowPassword(!isShowPassword)}
+                >
+                  {isShowPassword ? <FaEye /> : <FaEyeSlash />}
+                </span>
               </label>
               {errors.password && (
                 <span className="text-red-500">{errors.password.message}</span>

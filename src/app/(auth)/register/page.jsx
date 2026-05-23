@@ -7,11 +7,12 @@ import { FiMail, FiLock, FiUser } from "react-icons/fi";
 import { FiImage } from "react-icons/fi";
 import registrationBg from "../../../assets/registration-bg.png";
 import Navbar from "@/components/shared/Navbar";
-import { FaRegUser } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaRegUser } from "react-icons/fa";
 import { authClient } from "@/lib/auth-client";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
+import { useState } from "react";
 
 const RegisterPage = () => {
   const {
@@ -21,10 +22,11 @@ const RegisterPage = () => {
     formState: { errors },
   } = useForm();
 
+  const [isShowPassword, setIsShowPassword] = useState(false);
+
   const router = useRouter();
 
   const handleRegisterFunc = async (data) => {
-
     const { name, photoUrl, email, password } = data;
 
     const { data: res, error } = await authClient.signUp.email({
@@ -77,7 +79,10 @@ const RegisterPage = () => {
             </p>
           </div>
 
-          <form className="space-y-2" onSubmit={handleSubmit(handleRegisterFunc)}>
+          <form
+            className="space-y-2"
+            onSubmit={handleSubmit(handleRegisterFunc)}
+          >
             <fieldset className="fieldset">
               <legend className="fieldset-legend text-slate-700 font-medium">
                 Full Name
@@ -88,7 +93,7 @@ const RegisterPage = () => {
                   type="text"
                   placeholder="Enter your full name"
                   className="grow"
-                  {...register("name", {required : "Name field is required"})}
+                  {...register("name", { required: "Name field is required" })}
                 />
               </label>
               {errors.name && (
@@ -106,7 +111,9 @@ const RegisterPage = () => {
                   type="email"
                   placeholder="Enter your email"
                   className="grow"
-                  {...register("email", {required : "Email field is required"})}
+                  {...register("email", {
+                    required: "Email field is required",
+                  })}
                 />
               </label>
               {errors.email && (
@@ -124,7 +131,9 @@ const RegisterPage = () => {
                   type="url"
                   placeholder="Enter your photo URL"
                   className="grow"
-                  {...register("photoUrl", {required : "Photo Url field is required"})}
+                  {...register("photoUrl", {
+                    required: "Photo Url field is required",
+                  })}
                 />
               </label>
               {errors.photoUrl && (
@@ -139,11 +148,19 @@ const RegisterPage = () => {
               <label className="input input-bordered flex items-center gap-3 rounded-xl bg-white w-full">
                 <FiLock className="text-slate-400 text-lg shrink-0" />
                 <input
-                  type="password"
+                  type={isShowPassword ? "text" : "password"}
                   placeholder="Enter your password"
                   className="grow"
-                  {...register("password", {required : "Password field is required"})}
+                  {...register("password", {
+                    required: "Password field is required",
+                  })}
                 />
+                <span
+                  className="cursor-pointer"
+                  onClick={() => setIsShowPassword(!isShowPassword)}
+                >
+                  {isShowPassword ? <FaEye /> : <FaEyeSlash />}
+                </span>
               </label>
               {errors.password && (
                 <span className="text-red-500">{errors.password.message}</span>
