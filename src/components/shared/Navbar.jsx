@@ -80,7 +80,7 @@ const Navbar = () => {
                 <NavLink href="/products">Products</NavLink>
               </li>
               <li>
-                <NavLink href="/profile">My Profile</NavLink>
+                {user && <NavLink href="/profile">My Profile</NavLink>}
               </li>
               {user ? (
                 <li className="mt-2">
@@ -132,7 +132,7 @@ const Navbar = () => {
               <NavLink href="/products">Products</NavLink>
             </li>
             <li>
-              <NavLink href="/profile">My Profile</NavLink>
+              {user && <NavLink href="/profile">My Profile</NavLink>}
             </li>
           </ul>
         </div>
