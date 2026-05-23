@@ -49,7 +49,7 @@ const Home = async () => {
                     </p>
                     <div className="card-actions justify-end">
                       <Link
-                        href={"/"}
+                        href={`/products/${p.id}`}
                         className="btn btn-outline border-orange-400 w-full text-orange-400 hover:bg-orange-400 hover:text-white font-bold"
                       >
                         View Details
