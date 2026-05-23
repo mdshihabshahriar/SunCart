@@ -22,6 +22,12 @@ const RegisterPage = () => {
     formState: { errors },
   } = useForm();
 
+  const handleGoogleSignin = async () => {
+    const data = await authClient.signIn.social({
+      provider: "google",
+    });
+  };
+
   const [isShowPassword, setIsShowPassword] = useState(false);
 
   const router = useRouter();
@@ -174,7 +180,7 @@ const RegisterPage = () => {
 
           <div className="divider text-slate-400 my-6">or continue with</div>
 
-          <button className="btn w-full bg-white border border-slate-200 hover:bg-slate-100 rounded-xl">
+          <button className="btn w-full bg-white border border-slate-200 hover:bg-slate-100 rounded-xl" onClick={handleGoogleSignin}>
             <FcGoogle className="text-2xl" />
             Continue with Google
           </button>

@@ -28,7 +28,7 @@ const Home = async () => {
           <div className="mt-4 grid grid-cols-1 md:grid-cols-3">
             {products.slice(0, 3).map((p) => {
               return (
-                <div key={p.id} className="card bg-base-100 w-96 shadow-lg">
+                <div key={p.id} className="card bg-base-100 w-96 shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl">
                   <figure>
                     <Image
                       src={p.image}

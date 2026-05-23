@@ -21,7 +21,7 @@ const Products = async () => {
       <div className="grid grid-cols-1 md:grid-cols-3 mt-10 gap-4 space-y-3">
         {products.map((p) => {
           return (
-            <div key={p.id} className="card bg-base-100 shadow-lg">
+            <div key={p.id} className="card bg-base-100 w-96 shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl">
               <figure>
                 <Image
                   src={p.image}
