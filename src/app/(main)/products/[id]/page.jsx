@@ -10,13 +10,19 @@ const ProductDetailsPage = async ({ params }) => {
     <div className="md:container w-11/12 mx-auto mt-10">
       <div className="flex flex-col md:flex-row gap-10">
         <div className="md:w-1/2">
-          <Image
-            src={product.image}
-            alt={product.name}
-            width={600}
-            height={400}
-            className="w-full h-full object-cover rounded-xl shadow-lg"
-          />
+          {product.image ? (
+            <Image
+              src={product.image}
+              alt={product.name}
+              width={600}
+              height={400}
+              className="w-full h-full object-cover rounded-xl shadow-lg"
+            />
+          ) : (
+            <div className="w-full h-96 bg-orange-100 rounded-xl shadow-lg flex items-center justify-center">
+              <span className="text-6xl">🏖️</span>
+            </div>
+          )}
         </div>
 
         <div className="md:w-1/2 space-y-4 md:mt-20">
