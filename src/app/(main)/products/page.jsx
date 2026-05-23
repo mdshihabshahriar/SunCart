@@ -11,17 +11,17 @@ const Products = async () => {
   return (
     <div className="md:container w-11/12 mx-auto">
       <div className="text-center mt-6 space-y-2">
-        <h2 className="font-bold text-3xl md:text-5xl text-slate-900">
+        <h2 className="animate__animated animate__fadeInDown font-bold text-3xl md:text-5xl text-slate-900">
           Summer Essentials Collection
         </h2>
-        <p className="text-lg font-semibold text-slate-500">
+        <p className="animate__animated animate__fadeInUp animate__delay-1s text-lg font-semibold text-slate-500">
           Explore trendy summer products, beach accessories, skincare, and more.
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 mt-10 gap-4 space-y-3">
         {products.map((p) => {
           return (
-            <div key={p.id} className="card bg-base-100 w-96 shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl">
+            <div key={p.id} className="card bg-base-100 w-96 shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl animate__animated animate__fadeInUp">
               <figure>
                 <Image
                   src={p.image}

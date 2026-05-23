@@ -28,8 +28,7 @@ const ProfilePage = () => {
         <div className="absolute inset-0 bg-black/40 z-0" />
 
         <div className="relative z-10 max-w-2xl w-full mx-auto space-y-6">
-          <div className="bg-white/90 backdrop-blur-md rounded-3xl shadow-xl overflow-hidden">
-            {/* Banner */}
+          <div className="bg-white/90 backdrop-blur-md rounded-3xl shadow-xl overflow-hidden animate__animated animate__fadeInDown">
             <div className="h-32 bg-linear-to-r from-orange-400 to-orange-500 relative">
               <div className="absolute -bottom-12 left-1/2 -translate-x-1/2">
                 <Image
@@ -58,7 +57,7 @@ const ProfilePage = () => {
             </div>
           </div>
 
-          <div className="bg-white/90 backdrop-blur-md rounded-3xl shadow-xl p-6 space-y-4">
+          <div className="bg-white/90 backdrop-blur-md rounded-3xl shadow-xl p-6 space-y-4 animate__animated animate__fadeInUp animate__delay-1s">
             <h2 className="text-lg font-bold text-slate-800 mb-4">
               Account Information
             </h2>
@@ -128,7 +127,7 @@ const ProfilePage = () => {
 
           <button
             onClick={() => router.push('/update-profile')}
-            className="btn w-full bg-orange-500 hover:bg-orange-600 border-none text-white rounded-2xl text-lg shadow-lg"
+            className="btn w-full bg-orange-500 hover:bg-orange-600 border-none text-white rounded-2xl text-lg shadow-lg animate__animated animate__fadeInUp animate__delay-1s"
           >
             Update Information
           </button>

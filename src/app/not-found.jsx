@@ -14,7 +14,7 @@ const NotFound = () => {
         </h1>
 
         {/* Message */}
-        <div className="space-y-2">
+        <div className="space-y-2 animate__animated animate__bounceIn">
           <h2 className="text-2xl font-bold text-slate-800">
             Oops! Page Not Found
           </h2>

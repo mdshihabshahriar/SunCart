@@ -63,9 +63,9 @@ const LoginPage = () => {
         />
         <div className="absolute inset-0 bg-black/40 z-0"></div>
 
-        <div className="relative z-10 w-full max-w-md rounded-3xl bg-white/90 backdrop-blur-md p-8 shadow-2xl">
+        <div className="relative z-10 w-full max-w-md rounded-3xl bg-white/90 backdrop-blur-md p-8 shadow-2xl animate__animated animate__fadeIn">
           <div className="flex flex-col items-center mb-8">
-            <div className="text-5xl bg-blue-50 rounded-full p-3">☀️</div>
+            <div className="text-5xl bg-blue-50 rounded-full p-3 animate__animated animate__bounceIn">☀️</div>
             {/* <h1 className="text-4xl font-extrabold mt-2">
               <span className="text-orange-500">Sun</span>
               <span className="text-slate-900">Cart</span>
@@ -76,8 +76,8 @@ const LoginPage = () => {
           </div>
 
           <div className="text-center mb-6">
-            <h2 className="text-3xl font-bold text-slate-900">Welcome Back!</h2>
-            <p className="text-slate-500 mt-2">Login to continue shopping</p>
+            <h2 className="text-3xl font-bold text-slate-900 animate__animated animate__fadeIn animate__delay-1s">Welcome Back!</h2>
+            <p className="text-slate-500 mt-2 animate__animated animate__fadeIn animate__delay-1s">Login to continue shopping</p>
           </div>
 
           <form className="space-y-2" onSubmit={handleSubmit(handleLoginFunc)}>

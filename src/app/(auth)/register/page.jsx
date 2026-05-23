@@ -64,9 +64,9 @@ const RegisterPage = () => {
         />
         <div className="absolute inset-0 bg-black/40 z-0"></div>
 
-        <div className="relative z-10 w-full max-w-md rounded-3xl bg-white/90 backdrop-blur-md p-8 shadow-2xl">
+        <div className="relative z-10 w-full max-w-md rounded-3xl bg-white/90 backdrop-blur-md p-8 shadow-2xl animate__animated animate__fadeIn">
           <div className="flex flex-col items-center mb-8">
-            <div className="text-3xl bg-amber-200 rounded-full p-4">
+            <div className="text-3xl bg-amber-200 rounded-full p-4 animate__animated animate__bounceIn">
               <FaRegUser className="text-orange-500" />
             </div>
             {/* <h1 className="text-4xl font-extrabold mt-2">
@@ -77,10 +77,10 @@ const RegisterPage = () => {
           </div>
 
           <div className="text-center mb-6">
-            <h2 className="text-3xl font-bold text-slate-900">
+            <h2 className="text-3xl font-bold text-slate-900 animate__animated animate__fadeIn animate__delay-1s">
               Create Your Account
             </h2>
-            <p className="text-slate-500 mt-2">
+            <p className="text-slate-500 mt-2 animate__animated animate__fadeIn animate__delay-1s">
               Join SunCart and start shopping!
             </p>
           </div>

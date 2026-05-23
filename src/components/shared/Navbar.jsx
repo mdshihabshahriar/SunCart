@@ -138,7 +138,6 @@ const Navbar = () => {
         </div>
         <div className="navbar-end gap-2 hidden lg:flex">
           {user ? (
-            // ✅ Logged in হলে
             <div className="flex items-center gap-3">
               <Image
                 src={user.image || avatar}
@@ -156,7 +155,6 @@ const Navbar = () => {
               </button>
             </div>
           ) : (
-            // ✅ Logged out হলে
             <>
               <Link
                 href="/login"

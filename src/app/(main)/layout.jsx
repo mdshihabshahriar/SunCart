@@ -1,4 +1,4 @@
-import Hero from '@/app/(main)/hero/Hero';
+import "animate.css";
 import Footer from '@/components/shared/Footer';
 import Navbar from '@/components/shared/Navbar';
 

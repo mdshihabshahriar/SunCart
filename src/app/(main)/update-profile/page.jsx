@@ -55,10 +55,9 @@ const UpdateProfilePage = () => {
         <div className="absolute inset-0 bg-black/40 z-0" />
 
         <div className="relative z-10 w-full max-w-md">
-          <div className="bg-white/90 backdrop-blur-md rounded-3xl shadow-2xl p-8">
+          <div className="bg-white/90 backdrop-blur-md rounded-3xl shadow-2xl p-8 animate__animated animate__fadeInUp">
 
-            {/* Header */}
-            <div className="flex flex-col items-center mb-8">
+            <div className="flex flex-col items-center mb-8 animate__animated animate__bounceIn">
               <Image
                 src={user?.image || avatar}
                 alt="avatar"
@@ -74,7 +73,7 @@ const UpdateProfilePage = () => {
               </p>
             </div>
 
-            <form onSubmit={handleSubmit(handleUpdate)} className="space-y-4">
+            <form onSubmit={handleSubmit(handleUpdate)} className="space-y-4 animate__animated animate__fadeIn animate__delay-1s">
 
               <fieldset className="fieldset">
                 <legend className="fieldset-legend text-slate-700 font-medium">
