@@ -8,7 +8,7 @@ const ProductDetailsPage = async ({ params }) => {
   const product = await getProductDetailsById(id);
 
   return (
-    <div className="md:container w-11/12 mx-auto mt-10">
+    <div className="md:container w-11/12 mx-auto mt-10 min-h-[70vh]">
       <div className="flex flex-col md:flex-row gap-10">
         <div className="md:w-1/2">
           {product.image ? (

@@ -18,7 +18,7 @@ const Products = async () => {
           Explore trendy summer products, beach accessories, skincare, and more.
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 mt-10 gap-4 space-y-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 gap-4 space-y-3">
         {products.map((p) => {
           return (
             <div key={p.id} className="card bg-base-100 w-96 shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl animate__animated animate__fadeInUp">

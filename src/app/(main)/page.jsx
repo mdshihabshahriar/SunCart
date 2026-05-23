@@ -25,7 +25,7 @@ const Home = async () => {
           <FaFire className="text-orange-400" /> Popular Products
         </h2>
         <div className="w-11/12 mx-auto md:w-12/12 md:mx-0">
-          <div className="mt-4 grid grid-cols-1 md:grid-cols-3">
+          <div className="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-4">
             {products.slice(0, 3).map((p) => {
               return (
                 <div key={p.id} className="card bg-base-100 w-96 shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl">
@@ -68,7 +68,7 @@ const Home = async () => {
             <IoMdSunny className="text-orange-400" />
             Summer Care Tips
           </h2>
-          <div className="grid mt-4 mb-6 md:flex">
+          <div className="grid mt-4 mb-6 lg:flex">
             <div className="space-y-2 flex gap-2">
               <div className="rounded-full bg-blue-300 p-8">
                 <Image
