@@ -62,7 +62,7 @@ const Home = async () => {
           </div>
         </div>
       </div>
-      <div className="bg-blue-50 mt-6">
+      <div className="bg-blue-50 mt-8">
         <div className="container mx-auto mt-6">
           <h2 className="font-bold text-2xl flex items-center gap-2">
             <IoMdSunny className="text-orange-400" />
@@ -138,8 +138,8 @@ const Home = async () => {
           </div>
         </div>
       </div>
-      <div className="container mx-auto mt-6">
-        <div className="flex items-center">
+      <div className="container mx-auto mt-8">
+        <div className="flex items-center gap-1">
           <Image src={tree} alt="tree-image" width={30} height={30}></Image>
           <h2 className="font-bold text-2xl">Top Brands</h2>
         </div>

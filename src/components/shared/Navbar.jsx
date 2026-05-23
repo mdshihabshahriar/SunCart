@@ -86,7 +86,7 @@ const Navbar = () => {
                 <li className="mt-2">
                   <button
                     onClick={handleLogout}
-                    className="btn btn-outline border-orange-400 w-full font-bold text-[16px] hover:bg-orange-400 hover:text-white text-orange-400"
+                    className="btn btn-outline border-orange-400 font-bold text-[16px] hover:bg-orange-400 w-full"
                   >
                     Logout
                   </button>
@@ -121,7 +121,7 @@ const Navbar = () => {
               )}
             </ul>
           </div>
-          <Image src={logo} alt="logo-image" width={150} height={150}></Image>
+          <Link href={'/'}><Image src={logo} alt="logo-image" width={150} height={150}></Image></Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">

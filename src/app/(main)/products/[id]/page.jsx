@@ -1,6 +1,7 @@
 import { getProductDetailsById } from "@/lib/data";
 import Image from "next/image";
 import { FaStar } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const ProductDetailsPage = async ({ params }) => {
   const { id } = await params;

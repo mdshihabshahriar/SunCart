@@ -127,7 +127,7 @@ const ProfilePage = () => {
 
           <button
             onClick={() => router.push('/update-profile')}
-            className="btn w-full bg-orange-500 hover:bg-orange-600 border-none text-white rounded-2xl text-lg shadow-lg animate__animated animate__fadeInUp animate__delay-1s"
+            className="btn w-full bg-orange-400 hover:bg-orange-500 border-none text-white rounded-2xl text-lg shadow-lg animate__animated animate__fadeInUp animate__delay-1s"
           >
             Update Information
           </button>

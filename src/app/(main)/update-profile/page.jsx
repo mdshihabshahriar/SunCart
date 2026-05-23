@@ -111,7 +111,7 @@ const UpdateProfilePage = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="btn w-full bg-orange-500 hover:bg-orange-600 border-none text-white rounded-xl text-lg mt-2"
+                className="btn w-full bg-orange-400 hover:bg-orange-500 border-none text-white rounded-xl text-lg mt-2"
               >
                 {isSubmitting ? "Updating..." : "Update Information"}
               </button>

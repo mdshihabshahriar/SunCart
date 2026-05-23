@@ -173,7 +173,7 @@ const RegisterPage = () => {
               )}
             </fieldset>
 
-            <button className="btn w-full bg-orange-500 hover:bg-orange-600 border-none text-white rounded-xl text-lg mt-2">
+            <button className="btn w-full bg-orange-400 hover:bg-orange-500 border-none text-white rounded-xl text-lg mt-2">
               Register
             </button>
           </form>
@@ -189,7 +189,7 @@ const RegisterPage = () => {
             Already have an account?{" "}
             <Link
               href="/login"
-              className="text-orange-500 font-semibold hover:text-orange-600"
+              className="text-orange-400 font-semibold hover:text-orange-500"
             >
               Login now
             </Link>
