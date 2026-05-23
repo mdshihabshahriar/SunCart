@@ -7,6 +7,7 @@ import NavLink from "./NavLink";
 import { usePathname, useRouter } from "next/navigation";
 import { authClient } from "@/lib/auth-client";
 import { toast } from "react-toastify";
+import avatar from "../../assets/avatar.png"
 
 const Navbar = () => {
   const { data: session } = authClient.useSession();
@@ -60,7 +61,7 @@ const Navbar = () => {
                 <li className="mb-2">
                   <div className="flex items-center gap-3 px-2 py-2 bg-orange-50 rounded-xl">
                     <Image
-                      src={user.image || "/default-avatar.png"}
+                      src={user.image || avatar}
                       alt={user.name}
                       width={36}
                       height={36}
@@ -140,7 +141,7 @@ const Navbar = () => {
             // ✅ Logged in হলে
             <div className="flex items-center gap-3">
               <Image
-                src={user.image || "/default-avatar.png"}
+                src={user.image || avatar}
                 alt={user.name}
                 width={40}
                 height={40}

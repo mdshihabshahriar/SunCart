@@ -6,10 +6,14 @@ import { FiMail, FiUser, FiShield, FiCalendar } from "react-icons/fi";
 import profileBg from "../../../assets/login-bg.png";
 import { FaCheck } from "react-icons/fa";
 import { RxCross2 } from "react-icons/rx";
+import { useRouter } from "next/navigation";
+import avatar from "../../../assets/avatar.png"
 
 const ProfilePage = () => {
   const { data: session } = authClient.useSession();
   const user = session?.user;
+
+  const router = useRouter();
 
   return (
     <>
@@ -29,7 +33,7 @@ const ProfilePage = () => {
             <div className="h-32 bg-linear-to-r from-orange-400 to-orange-500 relative">
               <div className="absolute -bottom-12 left-1/2 -translate-x-1/2">
                 <Image
-                  src={user?.image || "/default-avatar.png"}
+                  src={user?.image || avatar}
                   alt={user?.name || "User"}
                   width={96}
                   height={96}
@@ -123,7 +127,7 @@ const ProfilePage = () => {
           </div>
 
           <button
-            onClick={() => authClient.signOut()}
+            onClick={() => router.push('/update-profile')}
             className="btn w-full bg-orange-500 hover:bg-orange-600 border-none text-white rounded-2xl text-lg shadow-lg"
           >
             Update Information
